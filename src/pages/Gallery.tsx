@@ -9,9 +9,9 @@ import { toast } from "sonner";
 
 // Gallery images - these are placeholder images that would be replaced with actual friend photos
 const galleryImages = [
-  {
+  { 
     id: 1,
-    source: "./assets/_rainbow._.sparkle_-20220528-0002.jpg",
+    source: "../src/assets/_rainbow._.sparkle_-20220528-0002.jpg",
     title: "",
     description: "",
   },
