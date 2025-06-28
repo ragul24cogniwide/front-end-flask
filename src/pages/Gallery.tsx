@@ -7,11 +7,13 @@ import Paper from "@/components/Paper";
 import Balloon from "@/components/Balloon";
 import { toast } from "sonner";
 
+import image1 from "../assets/_rainbow._.sparkle_-20220528-0002.jpg";
+
 // Gallery images - these are placeholder images that would be replaced with actual friend photos
 const galleryImages = [
-  { 
+  {
     id: 1,
-    source: "../src/assets/_rainbow._.sparkle_-20220528-0002.jpg",
+    source: image1,
     title: "",
     description: "",
   },
