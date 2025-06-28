@@ -11,7 +11,7 @@ import { toast } from "sonner";
 const galleryImages = [
   {
     id: 1,
-    source: "../src/assets/_rainbow._.sparkle_-20220528-0002.jpg",
+    source: "./assets/_rainbow._.sparkle_-20220528-0002.jpg",
     title: "",
     description: "",
   },
