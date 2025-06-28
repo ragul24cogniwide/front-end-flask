@@ -8,6 +8,20 @@ import Balloon from "@/components/Balloon";
 import { toast } from "sonner";
 
 import image1 from "../assets/_rainbow._.sparkle_-20220528-0002.jpg";
+import image2 from "../assets/Snapchat-1312354775.jpg";
+import image3 from "../assets/Snapchat-2139148319.jpg";
+import image4 from "../assets/Snapchat-341135461.png";
+import image5 from "../assets/ghibli.png";
+import image6 from "../assets/Snapchat-1703127967.jpg";
+import image7 from "../assets/IMG_20240701_161318_443.jpg";
+import image8 from "../assets/IMG_20240701_161347_205.jpg";
+import image9 from "../assets/IMG_20240701_161350_426.jpg";
+import image10 from "../assets/IMG_20240701_161353_614.jpg";
+import image11 from "../assets/IMG_20240701_161312_245.jpg";
+import image12 from "../assets/IMG_20240701_161340_847.jpg";
+import image13 from "../assets/Snapchat-225346477.jpg";
+import image14 from "../assets/Snapchat-1354848155.jpg";
+import image15 from "../assets/Snapchat-1703127967.jpg";
 
 // Gallery images - these are placeholder images that would be replaced with actual friend photos
 const galleryImages = [
@@ -19,25 +33,25 @@ const galleryImages = [
   },
   {
     id: 2,
-    source: "../src/assets/Snapchat-1312354775.jpg",
+    source: image2,
     title: "Biggies Burger",
     description: "",
   },
   {
     id: 3,
-    source: "../src/assets/Snapchat-2139148319.jpg",
+    source: image3,
     title: "Biggies Burger",
     description: "",
   },
   {
     id: 4,
-    source: "../src/assets/Snapchat-341135461.png",
+    source: image4,
     title: "Biggies Burger",
     description: "",
   },
   {
     id: 5,
-    source: "../src/assets/ghibli.png",
+    source: image5,
     title: "",
     description: "",
   },
