@@ -129,7 +129,10 @@ const HomePage = () => {
                 For My Amazing Friend
               </h2>
               <div className="prose prose-lg mx-auto">
-                <h1>Happy Birthday to the one who means the world to me.</h1>
+                <h1>
+                  Happy Birthday to the one who means my
+                  Wellwisher/friend/school-mate to me.
+                </h1>
                 <p className="mb-4">
                   Words will never truly capture how much you mean to me, but I
                   hope this message comes close. Thank you for walking into my
