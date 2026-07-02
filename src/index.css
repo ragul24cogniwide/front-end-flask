@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;700&family=Caveat:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,35 +6,35 @@
 
 @layer base {
   :root {
-    --background: 330 100% 98%;
-    --foreground: 330 10% 15%;
+    --background: 280 40% 98%;
+    --foreground: 280 20% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 330 10% 15%;
+    --card-foreground: 280 20% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 330 10% 15%;
+    --popover-foreground: 280 20% 15%;
 
-    --primary: 330 80% 60%;
-    --primary-foreground: 330 10% 98%;
+    --primary: 320 85% 65%;
+    --primary-foreground: 320 10% 98%;
 
-    --secondary: 250 70% 75%;
-    --secondary-foreground: 250 10% 15%;
+    --secondary: 260 80% 85%;
+    --secondary-foreground: 260 20% 15%;
 
-    --muted: 330 10% 92%;
-    --muted-foreground: 330 10% 40%;
+    --muted: 280 20% 93%;
+    --muted-foreground: 280 15% 45%;
 
-    --accent: 40 100% 70%;
-    --accent-foreground: 40 10% 15%;
+    --accent: 45 100% 75%;
+    --accent-foreground: 45 20% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 330 20% 85%;
-    --input: 330 20% 85%;
-    --ring: 330 80% 60%;
+    --border: 280 20% 90%;
+    --input: 280 20% 90%;
+    --ring: 320 85% 65%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -52,12 +51,16 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
     font-family: 'Poppins', sans-serif;
   }
 
   h1, h2, h3, h4, h5 {
     font-family: 'Pacifico', cursive;
+  }
+
+  .font-handwriting {
+    font-family: 'Caveat', cursive;
   }
 
   .confetti {
@@ -87,97 +90,147 @@
   .balloon {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
     position: relative;
-    box-shadow: inset -10px -10px 0 rgba(0,0,0,0.1);
+    box-shadow: inset -8px -8px 0 rgba(0,0,0,0.12), 4px 10px 18px rgba(0, 0, 0, 0.1);
     animation: float 4s ease-in-out infinite;
   }
 
   .balloon::before {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -6px;
     left: 50%;
     transform: translateX(-50%);
-    width: 12px;
-    height: 15px;
+    width: 10px;
+    height: 8px;
     background-color: inherit;
-    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
   }
 
   .balloon-string {
-    width: 1px;
-    height: 50px;
-    background-color: #666;
+    width: 1.5px;
+    height: 60px;
+    background: linear-gradient(to bottom, #999, transparent);
     position: absolute;
-    bottom: -50px;
+    bottom: -60px;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  .gallery-card {
-    @apply relative overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300;
+  /* Glassmorphism Cards */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(142, 72, 230, 0.08);
   }
 
-  .gallery-card img {
-    @apply transition-all duration-500;
+  .glass-panel-dark {
+    background: rgba(15, 12, 25, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
   }
 
-  .gallery-card:hover img {
-    @apply transform scale-110;
+  /* Polaroid layouts */
+  .polaroid-card {
+    background: #fdfdfd;
+    padding: 14px 14px 40px 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07), 0 5px 15px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.03);
   }
 
-  .gallery-card-overlay {
-    @apply absolute inset-0 bg-black bg-opacity-30 opacity-0 transition-opacity duration-300 flex items-center justify-center;
+  .polaroid-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.015);
+    pointer-events: none;
   }
 
-  .gallery-card:hover .gallery-card-overlay {
-    @apply opacity-100;
+  /* Washi tape effect */
+  .washi-tape {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 90px;
+    height: 24px;
+    background-color: rgba(253, 224, 71, 0.5); /* translucent yellow */
+    backdrop-filter: blur(1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    clip-path: polygon(0% 15%, 5% 0%, 95% 5%, 100% 20%, 98% 85%, 90% 100%, 10% 95%, 0% 80%);
+    opacity: 0.85;
+    z-index: 10;
   }
-  
-  @keyframes pop {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    20% {
-      transform: scale(1.2);
-    }
-    40% {
-      opacity: 0.8;
-      transform: scale(0.6);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(0);
-    }
+
+  .washi-tape-pink {
+    background-color: rgba(244, 63, 94, 0.35);
   }
-  
-  .animate-pop {
-    animation: pop 0.5s forwards ease-out;
+
+  .washi-tape-blue {
+    background-color: rgba(14, 165, 233, 0.3);
+  }
+
+  .washi-tape-purple {
+    background-color: rgba(168, 85, 247, 0.3);
+  }
+
+  /* Animated Aurora Blobs */
+  .aurora-container {
+    filter: blur(110px);
+    opacity: 0.45;
+  }
+
+  .aurora-blob {
+    mix-blend-mode: multiply;
+    animation: rotate-mesh 25s ease infinite alternate;
+  }
+
+  /* 3D Envelope Animations */
+  .envelope-wrapper {
+    perspective: 1000px;
+  }
+
+  /* Custom Scrollbar for premium feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 107, 159, 0.3);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 107, 159, 0.6);
   }
 }
 
+/* Keyframes and Animations */
 @keyframes confetti {
   0% {
     transform: translate(0, 0) rotate(0deg);
     opacity: 1;
   }
   100% {
-    transform: translate(var(--random-x), 100px) rotate(360deg);
+    transform: translate(var(--random-x), 500px) rotate(720deg);
     opacity: 0;
   }
 }
 
 @keyframes float {
-  0% {
-    transform: translatey(0px);
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
   }
   50% {
-    transform: translatey(-10px);
-  }
-  100% {
-    transform: translatey(0px);
+    transform: translateY(-16px) rotate(2deg);
   }
 }
 
@@ -190,4 +243,64 @@
     transform: translateY(100vh) rotate(360deg);
     opacity: 0;
   }
+}
+
+@keyframes rotate-mesh {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(40px, -60px) scale(1.15) rotate(120deg);
+  }
+  66% {
+    transform: translate(-30px, 40px) scale(0.9) rotate(240deg);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(360deg);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.95; transform: scale(1.01); }
+}
+
+/* Sparkle Cursor Star */
+.sparkle-star {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #fff 10%, rgba(255, 223, 0, 0.8) 50%, transparent 80%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: sparkle-fade 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes sparkle-fade {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* Audio Visualizer Pulse */
+@keyframes bar-jump {
+  0%, 100% { height: 4px; }
+  50% { height: 28px; }
+}
+
+.visualizer-bar {
+  animation: bar-jump 0.8s ease-in-out infinite;
 }
