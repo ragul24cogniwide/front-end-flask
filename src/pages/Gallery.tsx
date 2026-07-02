@@ -9,9 +9,9 @@ import { toast } from "sonner";
 
 import image1 from "../assets/_rainbow._.sparkle_-20220528-0002.jpg";
 import image2 from "../assets/Snapchat-1312354775.jpg";
-import image3 from "../assets/Snapchat-2139148319.jpg";
+import image17 from "../assets/Snapchat-2139148319.jpg";
 import image4 from "../assets/Snapchat-341135461.png";
-import image5 from "../assets/ghibli.png";
+import image18 from "../assets/ghibli.png";
 import image6 from "../assets/Snapchat-1703127967.jpg";
 import image7 from "../assets/IMG_20240701_161318_443.jpg";
 import image8 from "../assets/IMG_20240701_161347_205.jpg";
@@ -22,6 +22,18 @@ import image12 from "../assets/IMG_20240701_161340_847.jpg";
 import image13 from "../assets/Snapchat-225346477.jpg";
 import image14 from "../assets/Snapchat-1354848155.jpg";
 import image15 from "../assets/Snapchat-1703127967.jpg";
+
+
+import image16 from "../assets/20260103_154827.jpg"
+import image3 from "../assets/20260103_154835.jpg"
+import image5 from "../assets/20260103_155020.jpg"
+import image19 from "../assets/20260103_155238.jpg"
+import image20 from "../assets/20260103_164616.jpg"
+import image21 from "../assets/20260103_172330.jpg"
+import image22 from "../assets/20260103_172342.jpg"
+import image23 from "../assets/20260103_174021.jpg"
+import image24 from "../assets/20260103_172119.jpg"
+import image25 from "../assets/20260103_174022.jpg"
 
 // Gallery images - these are placeholder images that would be replaced with actual friend photos
 const galleryImages = [
@@ -40,7 +52,7 @@ const galleryImages = [
   {
     id: 3,
     source: image3,
-    title: "Biggies Burger",
+    title: "Gameistry",
     description: "",
   },
   {
@@ -52,13 +64,31 @@ const galleryImages = [
   {
     id: 5,
     source: image5,
+    title: "Gameistry",
+    description: "",
+  },
+  {
+    id: 18,
+    source: image18,
     title: "Ghibli style😂",
+    description: "",
+  },
+  {
+    id: 19,
+    source: image19,
+    title: "Gameistry",
     description: "",
   },
   {
     id: 6,
     source: image6,
     title: "",
+    description: "",
+  },
+  {
+    id: 20,
+    source: image20,
+    title: "Gameistry",
     description: "",
   },
   {
@@ -86,14 +116,26 @@ const galleryImages = [
     description: "",
   },
   {
+    id: 23,
+    source: image23,
+    title: "Gameistry",
+    description: "",
+  },
+  {
     id: 11,
     source: image11,
     title: "",
     description: "",
   },
   {
-    id: 12,
-    source: image12,
+    id: 21,
+    source: image21,
+    title: "",
+    description: "",
+  },
+  {
+    id: 22,
+    source: image22,
     title: "",
     description: "",
   },
@@ -110,11 +152,43 @@ const galleryImages = [
     description: "",
   },
   {
+    id: 12,
+    source: image12,
+    title: "",
+    description: "",
+  },
+  {
     id: 15,
     source: image15,
     title: "",
     description: "",
   },
+  {
+    id: 16,
+    source: image16,
+    title: "Gameistry",
+    description: "",
+  },
+  {
+    id: 17,
+    source: image17,
+    title: "Biggies Burger",
+    description: "",
+  },
+  {
+    id: 24,
+    source: image24,
+    title: "Gameistry",
+    description: "",
+  },
+  {
+    id: 25,
+    source: image25,
+    title: "Gameistry",
+    description: "",
+  }
+
+
 ];
 
 const Gallery = () => {
@@ -210,7 +284,7 @@ const Gallery = () => {
               animationDelay: `${i * 0.5}s`,
             }}
             interactive={false}
-            onPop={() => {}}
+            onPop={() => { }}
           />
         ))}
 
